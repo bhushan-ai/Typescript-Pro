@@ -48,7 +48,7 @@ function defaultParams(value: number, exponent: number = 0) {
 
 const expo = defaultParams(2, 5);
 
-console.log("expo", expo);
+console.log("expo of values", expo);
 
 //Named Parameters
 
