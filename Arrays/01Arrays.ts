@@ -7,7 +7,7 @@ const names: string[] = [];
 // error --> (Argument of type 'number' is not assignable to parameter of type 'string'.)
 
 names.push("bhushannn"); // Ohh hell yeahh bruhh
-console.log("names-->",names)
+console.log("names--->",names)
 
 
 
