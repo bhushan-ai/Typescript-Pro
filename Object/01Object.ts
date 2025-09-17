@@ -60,4 +60,4 @@ console.log("nameAgeMap--->", nameAgeMap);
 const carNameandModel: { [type: string]: string } = {};
 carNameandModel.type = "Toyota";
 
-console.log("carNameandModel--->", carNameandModel);
+console.log("carNameandModel---->", carNameandModel);
