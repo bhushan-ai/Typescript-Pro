@@ -7,7 +7,7 @@
 //Numeric
 
 enum Fourdirections {
-  est = 1,
+  east = 1,
   west,
   north,
   south,
