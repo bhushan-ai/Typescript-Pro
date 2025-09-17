@@ -12,6 +12,13 @@ console.log(writeCode(404));
 
 console.log(writeCode("500"));
 
+function hieee(name: string | boolean) {
+  return `heyyy ${name}`;
+}
+
+console.log(hieee('bhushann'));
+
+
 //errrors
 //return `my code is ${code.toUpperCase()}`;
 //we can not use toUpperCase()
