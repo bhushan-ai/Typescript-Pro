@@ -80,5 +80,39 @@ class Reactangle implements Shape {
   }
 }
 
-const A1 = new Reactangle(5,10)
+const A1 = new Reactangle(5, 10);
 console.log(A1.getArea());
+
+//Inheritance: Extends
+//Classes can extend each other through the extends keyword.
+
+//A class can only extend one other class.
+
+interface Shape1 {
+  getArea: () => number;
+}
+
+class Reactangle1 implements Shape1 {
+  public constructor(
+    protected readonly width: number,
+    protected readonly height: number
+  ) {}
+
+  public getArea(): number {
+    return this.height * this.width;
+  }
+}
+
+class Square extends Reactangle1 {
+  public constructor(width: number) {
+    super(width, width);
+  }
+  public getArea(): number {
+    return this.width * this.width;
+  }
+}
+
+const a2 = new Square(2)
+console.log(a2.getArea())
+const a1 = new Reactangle(2,4)
+console.log(a1.getArea())

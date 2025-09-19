@@ -1,4 +1,19 @@
 //TypeScript adds types and visibility modifiers to JavaScript classes.
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 //The members of a class (properties & methods) are typed using type annotations, similar to variables.
 //Members: Visibility
 //Class members can also be given special modifiers that affect visibility.
@@ -61,3 +76,27 @@ var Reactangle = /** @class */ (function () {
 }());
 var A1 = new Reactangle(5, 10);
 console.log(A1.getArea());
+var Reactangle1 = /** @class */ (function () {
+    function Reactangle1(width, height) {
+        this.width = width;
+        this.height = height;
+    }
+    Reactangle1.prototype.getArea = function () {
+        return this.height * this.width;
+    };
+    return Reactangle1;
+}());
+var Square = /** @class */ (function (_super) {
+    __extends(Square, _super);
+    function Square(width) {
+        return _super.call(this, width, width) || this;
+    }
+    Square.prototype.getArea = function () {
+        return this.width * this.width;
+    };
+    return Square;
+}(Reactangle1));
+var a2 = new Square(2);
+console.log(a2.getArea());
+var a1 = new Reactangle(2, 4);
+console.log(a1.getArea());
