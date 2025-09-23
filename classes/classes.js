@@ -100,3 +100,28 @@ var a2 = new Square(2);
 console.log(a2.getArea());
 var a1 = new Reactangle(2, 4);
 console.log(a1.getArea());
+var Rectangle4 = /** @class */ (function () {
+    function Rectangle4(width, height) {
+        this.width = width;
+        this.height = height;
+    }
+    Rectangle4.prototype.getArea = function () {
+        return this.width * this.height;
+    };
+    Rectangle4.prototype.toString = function () {
+        return "Rectangle[width=".concat(this.width, "] ,[height=").concat(this.height, "]");
+    };
+    return Rectangle4;
+}());
+var Square1 = /** @class */ (function (_super) {
+    __extends(Square1, _super);
+    function Square1(width) {
+        return _super.call(this, width, width) || this;
+    }
+    Square1.prototype.toString = function () {
+        return "Square[width=".concat(this.width, "]");
+    };
+    return Square1;
+}(Rectangle4));
+var s1 = new Square1(5);
+console.log(s1.getArea());

@@ -112,7 +112,44 @@ class Square extends Reactangle1 {
   }
 }
 
-const a2 = new Square(2)
-console.log(a2.getArea())
-const a1 = new Reactangle(2,4)
-console.log(a1.getArea())
+const a2 = new Square(2);
+console.log(a2.getArea());
+const a1 = new Reactangle(2, 4);
+console.log(a1.getArea());
+
+//Override
+//When a class extends another class, it can replace the members of the parent class with the same name.
+
+//Newer versions of TypeScript allow explicitly marking this with the override keyword.
+
+interface Shape3 {
+  getArea: () => number;
+}
+
+class Rectangle4 implements Shape3 {
+  public constructor(
+    protected readonly width: number,
+    protected readonly height: number
+  ) {}
+
+  public getArea(): number {
+    return this.width * this.height;
+  }
+
+  public toString(): string {
+    return `Rectangle[width=${this.width}] ,[height=${this.height}]`;
+  }
+}
+
+class Square1 extends Rectangle4 {
+  public constructor(width: number) {
+    super(width, width);
+  }
+  public override toString(): string {
+    return `Square[width=${this.width}]`
+  }
+}
+
+const s1 = new Square1(5)
+console.log(s1.getArea());
+
