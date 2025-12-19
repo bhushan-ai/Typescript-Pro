@@ -56,4 +56,51 @@ function serve(chai: KulhadChai | CuttingChai) {
 }
 
 //superpower of type check
-type ChaiOrder = {};
+type ChaiOrder = {
+  type: string;
+  sugar: number;
+};
+
+function isChaiOrder(obj: any): obj is ChaiOrder {
+  return (
+    typeof obj === "object" &&
+    obj !== null &&
+    typeof obj.type === "string" &&
+    typeof obj.type === "number"
+  );
+}
+
+function serveOrder(item: ChaiOrder | string) {
+  if (isChaiOrder(item)) {
+    return `Serving ${item.type} chai with ${item.sugar}`;
+  }
+  return `Serving custom chai:${item}`;
+}
+
+console.log(serveOrder("new chai"));
+
+//defining type intrestingly
+
+type MasalaChai = { type: "masala"; spiceLevel: number };
+type GingerChai = { type: "ginger"; amount: number };
+type ElaichiChai = { type: "ilaichi"; aroma: number };
+
+type Chai = MasalaChai | GingerChai | ElaichiChai;
+
+function makeChai(order: Chai) {
+  //type narrowing
+  switch (order.type) {
+    case "masala":
+      return `Masala`;
+      break;
+
+    case "ilaichi":
+      return `ilaichi`;
+      break;
+
+    case "ginger":
+      return `ginger`;
+      break;
+  }
+}
+console.log(makeChai({ type: "ginger", amount: 2 }));
