@@ -25,8 +25,7 @@ let value: any;
 value = "op";
 value = [1, 2, 3, 4];
 value = 2.5;
-// value.toUpperCase(); //no error coming
-
+// 
 let newValue: unknown;
 
 newValue = "op";
